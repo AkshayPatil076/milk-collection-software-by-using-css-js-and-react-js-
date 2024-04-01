@@ -3,14 +3,34 @@ import './assite/navbar.css'
 
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-
-function Navbar(props){
+let b ;
+// Change the language of an website text 
+export function language(b){
+   const English = ["Milk Collection & Billing","Reports","Setting ","Client","Contact"]
+   const Hindi = [" दूध खरेदी आणि विक्री","रिपोर्टों","सेटिंग","ग्राहक","संपर्क"];
+   // const list = Hindi.map((Hindi)=> <p>{Hindi}</p>)
+   // props.b;
+   
+   if(b === "hindi"){
+      const list = Hindi.map((Hindi)=> <p>{Hindi}</p>)
+      return list
+   }
+   else{
+      const list = English.map((English)=> <p>{English}</p>)
+      return list
+   }
+   
+  }
 
   
+  
+function Navbar(){
+
    return(
 
       <>
-  
+      
+   {language("hindi")}
        {/* <!--=============== HEADER ===============--> */}
       <header class="header">
          <nav class="nav container">
@@ -23,12 +43,14 @@ function Navbar(props){
                   {/* <i class="ri-menu-line nav__burger"></i> */} <i class="bi bi-menu-button-wide-fill  nav__burger"></i>
                   {/* <i class="ri-close-line nav__close"></i> */} <i class="bi bi-menu-button-fill nav__burger"></i>
                </div>
+               
             </div>
 
             {/* <!--=============== NAV MENU ===============--> */}
             <div class="nav__menu" id="nav-menu">
                <ul class="nav__list">
-                  <li><a href="#" class="nav__link"><i class="bi bi-pc-display-horizontal"></i>  &nbsp;&nbsp;&nbsp;दूध खरेदी आणि विक्री</a></li>
+                  <li><a href="#" class="nav__link"><i class="bi bi-pc-display-horizontal"></i>  &nbsp;&nbsp;&nbsp;{language()[0]}</a></li>
+                  {/* दूध खरेदी आणि विक्री */}
 
       {/* reports */}
                   {/* <li><a href="#" class="nav__link"><i class="bi bi-flag-fill"></i>&nbsp;&nbsp;&nbsp;रिपोर्टों</a></li> */}
@@ -36,7 +58,7 @@ function Navbar(props){
                   {/* <!--=============== DROPDOWN 1 ===============--> */}
                   <li class="dropdown__item">
                      <div class="nav__link"><i class="bi bi-flag-fill"></i>&nbsp;&nbsp;&nbsp;    
-                     रिपोर्टों <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                     {language()[1]} <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                      </div>
 
                      <ul class="dropdown__menu">
@@ -62,12 +84,12 @@ function Navbar(props){
                      </ul>
                   </li>
                   
-                  <li><a href="#" class="nav__link"><i class="bi bi-gear-wide-connected"></i>&nbsp;&nbsp;&nbsp;सेटिंग</a></li>
+                  <li><a href="#" class="nav__link"><i class="bi bi-gear-wide-connected"></i>&nbsp;&nbsp;&nbsp;{language()[2]}</a></li>
 
                   {/* <!--=============== DROPDOWN 2 ===============--> */}
                   <li class="dropdown__item">
                      <div class="nav__link">
-                     <i class="bi bi-people-fill"></i>&nbsp;&nbsp;&nbsp;ग्राहक
+                     <i class="bi bi-people-fill"></i>&nbsp;&nbsp;&nbsp;{language()[3]}
                      </div>
 
                      <ul class="dropdown__menu">
@@ -91,7 +113,7 @@ function Navbar(props){
                      </ul>
                   </li>
 
-                  <li><a href="#" class="nav__link"><i class="bi bi-telephone-fill"></i>&nbsp;&nbsp;&nbsp;संपर्क</a></li>
+                  <li><a href="#" class="nav__link"><i class="bi bi-telephone-fill"></i>&nbsp;&nbsp;&nbsp;{language()[4]}</a></li>
                </ul>
             </div>
          </nav>
