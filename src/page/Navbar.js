@@ -1,11 +1,19 @@
 // import { Component } from "react";
+// import { Link } from 'react-router-dom';
 import './assite/navbar.css'
 
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
+// import {  Link } from "react-router-dom";
+import Homepage from './Homepage';
+
+// import { Route, Link, BrowserRouter as Router } from 'react-router-dom'  
+
+
+
 // Change the language of an website text 
 export function language(){
-   let b ='hindi';
+   let b ='eng';
    const English = ["Milk Collection & Billing","Reports","Setting ","Client","Contact"]
    const Hindi = [" दूध खरेदी आणि विक्री","रिपोर्टों","सेटिंग","ग्राहक","संपर्क"];
    // const list = Hindi.map((Hindi)=> <p>{Hindi}</p>)
@@ -23,18 +31,17 @@ export function language(){
   }
 
   
-  
 function Navbar(){
 
    return(
 
       <>
-      
        {/* <!--=============== HEADER ===============--> */}
       <header className="header">
+      
          <nav className="nav container">
             <div className="nav__data">
-               <a href="#" className="nav__logo" >
+               <a  className="nav__logo" href='/kdlskdlk'>
                <i className="bi bi-bookmark-fill"></i> &nbsp; &nbsp; &nbsp; Company
                </a>
                
@@ -48,7 +55,7 @@ function Navbar(){
             {/* <!--=============== NAV MENU ===============--> */}
             <div className="nav__menu" id="nav-menu">
                <ul className="nav__list">
-                  <li><a href="#" className="nav__link"><i className="bi bi-pc-display-horizontal"></i>  &nbsp;&nbsp;&nbsp;{language()[0]}</a></li>
+                  <li><a  className="nav__link" href='/'><i className="bi bi-pc-display-horizontal"></i>  &nbsp;&nbsp;&nbsp;{language()[0]}</a></li>
                   {/* दूध खरेदी आणि विक्री */}
 
       {/* reports */}
@@ -62,18 +69,18 @@ function Navbar(){
 
                      <ul className="dropdown__menu">
                         <li>
-                           <a href="#" className="dropdown__link">
+                           <a className="dropdown__link" href='/Home'>
                               <i clas="ri-pie-chart-line"></i> Overview
                            </a>                          
                         </li>
 
                         <li>
-                           <a href="#" className="dropdown__link">
+                           <a  className="dropdown__link" href='/about'>
                               <i className="ri-arrow-up-down-line"></i> Transactions
                            </a>
                         </li>
                         <li>
-                           <a href="#" className="dropdown__link">
+                           <a className="dropdown__link" href='/home'>
                               <i className="ri-arrow-up-down-line"></i> Transactions
                            </a>
                         </li>
@@ -93,31 +100,31 @@ function Navbar(){
 
                      <ul className="dropdown__menu">
                         <li>
-                           <a href="#" className="dropdown__link">
+                           <a className="dropdown__link" href='/about'>
                               <i className="ri-user-line"></i> Profiles
                            </a>                          
                         </li>
 
                         <li>
-                           <a href="#" className="dropdown__link">
+                           <a className="dropdown__link" href='/Contact'>
                               <i className="ri-lock-line"></i> Accounts
                            </a>
                         </li>
 
                         <li>
-                           <a href="#" className="dropdown__link">
+                           <a className="dropdown__link" href='/hhhhh'>
                               <i className="ri-message-3-line"></i> Messages
                            </a>
                         </li>
                      </ul>
                   </li>
 
-                  <li><a href="#" className="nav__link"><i className="bi bi-telephone-fill"></i>&nbsp;&nbsp;&nbsp;{language()[4]}</a></li>
+                  <li><a className="nav__link" href='/kkkk'><i className="bi bi-telephone-fill"></i>&nbsp;&nbsp;&nbsp;{language()[4]}</a></li>
                </ul>
             </div>
          </nav>
-      </header>
-     
+     </header>
+      {/* </Router> */}
       </>
    );
 }
